@@ -4649,9 +4649,7 @@ status_t AudioFlinger::onTransactWrapper(TransactionCode code,
         case TransactionCode::SYSTEM_READY:
         case TransactionCode::SET_AUDIO_HAL_PIDS:
         case TransactionCode::SET_VIBRATOR_INFOS:
-        case TransactionCode::UPDATE_SECONDARY_OUTPUTS:
-        case TransactionCode::SET_APP_VOLUME:
-        case TransactionCode::SET_APP_MUTE: {
+        case TransactionCode::UPDATE_SECONDARY_OUTPUTS: {
             if (!isServiceUid(IPCThreadState::self()->getCallingUid())) {
                 ALOGW("%s: transaction %d received from PID %d unauthorized UID %d",
                       __func__, code, IPCThreadState::self()->getCallingPid(),
